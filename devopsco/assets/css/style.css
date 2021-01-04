@@ -1,0 +1,394 @@
+.topnav a:hover {
+    border-bottom: 2px solid #FC8600;
+    color: white;
+}
+
+/* Navigation Bar */
+
+
+/* Remove dark-nav class from nav tag to see the light version  */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  font-family: arial;
+}
+header {
+  height: 100vh;
+}
+.container:after, .container:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Start navbar */
+.nav {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ececec;
+  min-height: 50px;
+  height: auto;
+}
+.nav .nav-heading {float: left}
+
+.nav .nav-heading .toggle-nav {
+  padding: 2px 10px;
+  border-radius: 5px;
+  border: none;
+  display: none;
+  background-color: transparent;
+}
+.nav .nav-heading > a {
+  text-decoration: none;
+  color: #000;
+  line-height: 60px;
+  font-weight: 400;
+  font-size: 19px;
+}
+
+/* Start menu */
+.nav .menu {
+  float: right;
+}
+.nav .menu:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.nav .list {
+  float: right;
+  margin: 0;
+}
+.nav .list > li {
+  float: left;
+  list-style: none;
+}
+.nav .list > li > a {
+  color: #555;
+  text-decoration: none;
+  display: block;
+  line-height: 60px;
+  padding: 0 10px;
+}
+.nav .list > li > a:hover,
+.nav .list > li.active > a {
+  color: #333
+}
+
+/* Start drodpwn menu */
+.categories {
+  position: relative;
+}
+.nav .list .categories .drop-down {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #FFF;
+  border: 1px solid #ccc;
+  padding: 5px 0;
+  min-width: 160px;
+  width: auto;
+  white-space: nowrap;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  display: none;
+  z-index: 99999
+}
+.nav .list .drop-down > .seprator {
+  height: 1px;
+  width: 100%;
+  margin: 9px 0;
+  background-color: #e5e5e5
+}
+.drop-down > li > a {
+  color: #333;
+  display: block;
+  padding: 3px 20px;
+  text-decoration: none;
+}
+.show {
+  display: block
+}
+
+/* Sub dropdown menu */
+.categories .drop-down .sub-drop-down {position: relative}
+.categories .drop-down .sub-drop-down:hover .sub-dropdown {
+  display: block;
+}
+.categories .drop-down .sub-dropdown {
+  position: absolute;
+  top: -20px;
+  left: 107%;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: 10px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  display: none;
+}
+.categories .drop-down .sub-dropdown:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #cccccc
+}
+.categories .drop-down .sub-dropdown > li > a {
+  color: #555;
+  padding: 5px 0;
+  display: block
+}
+/* End sub dropdown menu */
+/* Dark theme */
+.dark-nav {background-color: #FFFFFF}
+
+.dark-nav .list > li > a {color: #000066}
+
+.dark-nav .list > li > a:hover,
+.dark-nav .list > li.active > a {color: #FC8600}
+
+.dark-nav .nav-heading > a {color: #1d1010}
+
+.dark-nav .nav-heading .toggle-nav {color: #1d1010}
+
+/* End Dark theme */
+
+/* Start media query for navbar */
+@media (max-width: 767px) {
+  .nav .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .nav .nav-heading {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid #ffe7e7
+  }
+  .nav .nav-heading .brand {float: left}
+
+  .nav .nav-heading .toggle-nav {
+    display: block;
+    float: right;
+    margin-top: 14px;
+  }
+
+  .nav .menu {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: none;
+  }
+
+  .nav .list {
+    float: none;
+    width: 100%;
+  }
+  .nav .list > li {
+    float: none;
+    width: 100%;
+  }
+  .nav .list > li > a {padding: 12px 0;line-height: 1}
+
+  .nav .list .categories .drop-down {
+    background-color: transparent;
+    border: none;
+    position: static;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 0
+  }
+  .categories .drop-down .sub-dropdown {
+    position: static;
+    background-color: transparent;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-left: 20px;
+  }
+  .categories .drop-down .sub-dropdown > li > a {
+    color: #ff8;
+  }
+  .categories .drop-down .sub-dropdown:before {
+    display: none
+  }
+  /* Simple reset for dark theme */
+  .dark-nav .menu {background-color: #ff28ff}
+  .dark-nav .nav-heading {border-bottom-color: #ff343c}
+  .dark-nav .list .drop-down > li > a {color: #AAA}
+  .dark-nav .list .categories .drop-down .seprator {background-color: #2a2d38}
+
+}
+
+.jumbotron{
+  background-image: url(../images/1.png);
+  height: 75%;
+  width: 100%;
+}
+.ya{
+  text-align: center;
+  margin-left: 33%;
+  font-size: 44px;
+  font-weight: 700;
+  color: #fff;
+}
+.y1{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Styles for wrapping the search box */
+
+.main {
+  width: 50%;
+  margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.btn-grad {background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%)}
+.btn-grad:hover { background-position: right center; }
+
+
+/* no of records  */
+
+
+@media (max-width: 768px)
+.homenorec {
+    padding: 0.2rem!important;
+}
+
+.homenorec {
+    border: 3px solid #00A4CB;
+    padding: 1.5rem!important;
+    border-radius: 4px;
+}
+@media (max-width: 768px)
+.homenorec {
+    margin-top: 10px;
+}
+.shadow-lg {
+    box-shadow: 0 1rem 1rem rgba!important;
+    height: 80%;
+    width: 87%;
+    margin-left: 15%;
+}
+.bg-white {
+    background-color: #fff!important;
+}
+.col-3 {
+  -ms-flex: 0 56 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@media (max-width: 768px)
+.noof {
+    margin-top: -14%;
+}
+.noof {
+    margin-top: -5.5%;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (max-width: 768px)
+.homenorec h4 {
+    font-size: 1rem;
+}
+.text-info {
+    color: #26C1EF!important;
+}
+.text-center {
+    text-align: center!important;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+@media (max-width: 768px)
+.homenorec h4 {
+  font-size: 1rem;
+}
+.text-info {
+  color: #26C1EF!important;
+}
+.text-center {
+  text-align: center!important;
+}
+@media (max-width: 768px)
+.homenorec h4 {
+    font-size: 1rem;
+}
+.text-info {
+    color: #26C1EF!important;
+}
+.text-center {
+    text-align: center!important;
+}
+@media (max-width: 768px)
+.recline {
+    font-size: 13px;
+}
+.text-center {
+    text-align: center!important;
+}
+
+.text-center {
+    text-align: center!important;
+}
+.pt-1, .py-1 {
+    padding-top: .25rem!important;
+}
+.mb-0, .my-0 {
+    margin-bottom: 0!important;
+}
+
+/* end no of records  */
